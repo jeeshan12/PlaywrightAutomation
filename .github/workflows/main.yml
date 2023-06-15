@@ -35,14 +35,23 @@ jobs:
       
     - name: Run Playwright tests
       run: npx playwright test --project chromium --grep-invert=/visual/
+      id: web
+    
+    - uses: actions/upload-artifact@v3
+      if: job.status.web.status == failure() || job.status.web.status == success()
+      with:
+        name: playwright-report-web
+        path: playwright-report/
+        retention-days: 30
       
     - name: Run Playwright API tests
       run: npx playwright test --project api
       if: always()
+      id: api
       
     - uses: actions/upload-artifact@v3
-      if: always()
+      if: job.status.api.status == failure() || job.status.api.status == success()
       with:
-        name: playwright-report
+        name: playwright-report-api
         path: playwright-report/
         retention-days: 30
