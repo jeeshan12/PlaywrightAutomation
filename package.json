@@ -1,0 +1,21 @@
+{
+  "name": "playwright-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [
+    "visual-playwright",
+    "graphql",
+    "rest api",
+    "docker",
+    "github actions"
+  ],
+  "author": "Mohammad Jeeshan",
+  "license": "ISC",
+  "devDependencies": {
+    "@faker-js/faker": "^8.0.2",
+    "@playwright/test": "^1.33.0",
+    "zod": "^3.21.4"
+  }
+}

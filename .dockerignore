@@ -1,0 +1,4 @@
+.auth
+.node_modules
+playwright-image-version.sh
+test-results
