@@ -13,8 +13,8 @@ test("Place Order", async ({
   await productPage.clickAddToCartButton(ITEM_TWO_INDEX);
   await expect(productPage.shoppingCartLink).toHaveText("2");
   await productPage.clickShoppingCartLink();
-  const firstItemCost = await cartPage.cartItemPrice(0).innerText();
-  const secondItemCost = await cartPage.cartItemPrice(1).innerText();
+  const firstItemCost = await cartPage.cartItemPrice(ITEM_ONE_INDEX).innerText();
+  const secondItemCost = await cartPage.cartItemPrice(ITEM_TWO_INDEX).innerText();
   await cartPage.clickCheckOutButton();
   await customerInformationPage.enterInformation(
     DataFactory.getCustomerInformation()
