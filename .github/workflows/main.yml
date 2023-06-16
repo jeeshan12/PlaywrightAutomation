@@ -4,6 +4,11 @@ on:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
+  workflow_run:
+     workflows:
+      - Update Snapshots
+     types:
+      - completed
 jobs:
   test:
     timeout-minutes: 60
