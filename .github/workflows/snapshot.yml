@@ -5,8 +5,8 @@ on:
     types: [created]
 
 jobs:
-  deploy:
-    name: Push Image to Docker hub
+  updateSnaphosts:
+    name: Update the snapshots
     # This job will only run if the comment was on a pull requests and matches the slash command
     if: ${{ github.event.issue.pull_request && github.event.comment.body == '/update-snapshots'}}
     timeout-minutes: 60
