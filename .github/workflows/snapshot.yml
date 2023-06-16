@@ -10,7 +10,7 @@ jobs:
   updateSnaphosts:
     name: Update the snapshots
     # This job will only run if the comment was on a pull requests and matches the slash command
-    if: ${{ github.event.issue.pull_request && github.event.comment.body == '/update-snapshots'}}
+    if: github.event.issue.pull_request  &&  contains(github.event.comment.body , '/update-snapshots')
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
