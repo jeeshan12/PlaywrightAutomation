@@ -74,7 +74,7 @@ export interface ReportOptions {
  | url   | endpoint | Y  |
  | headers   | headers to pass for request| N `(set to "Content-Type": "application/json"  Accept: "application/json"by default)` **(optional)** |
  | attachRequestToReports   | Attach request to the reports | N|
- | attachResponseToReports   | Attach request to the reports | N |
+ | attachResponseToReports   | Attach response to the reports | N |
 
 
   
