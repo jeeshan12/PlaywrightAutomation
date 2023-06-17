@@ -264,13 +264,21 @@ export interface DeleteMethodOptions extends ReportOptions {
 
 
 # POM
+
+ [(Back to top)](#table-of-contents)
+ 
 We will be using Page object Model and Page components to design our tests. Pages are maintained under `pages` folder and Page components are maintained under `pagecomponents`. To get more information on Page Object, refer to this beautiful article [Page Object](https://martinfowler.com/bliki/PageObject.html) by `Martin Fowler`.
 
 # Fixtures
+
+ [(Back to top)](#table-of-contents)
+ 
 Test fixtures are used to establish an environment for each test, giving the test everything it needs and nothing else. Test fixtures are isolated between tests. With fixtures, you can group tests based on their meaning instead of their standard setup. More information about fixtures can be found on official documentation [here](https://www.cuketest.com/playwright/docs/test-fixtures/).
 Here is another [blog](https://blog.delpuppo.net/playwright-fixtures) for Playwright fixtures.
 # Specs
+
  [(Back to top)](#table-of-contents)
+ 
 **Specs are written under tests folder**.
 Rest API tests can be found under  `tests/api` folder.
 GraphQL tests can be found under  `tests/api` folder.
@@ -357,4 +365,7 @@ Once the execution is done you can open the playwright report by running the com
   npx playwright show-report
 ```
 # CI
+ 
+ [(Back to top)](#table-of-contents)
+ 
 Tests runs on Github actions for every commit to the `main` branch and whenever a `PR` is created.
