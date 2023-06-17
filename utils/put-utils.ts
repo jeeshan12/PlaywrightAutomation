@@ -1,10 +1,10 @@
 import { APIRequestContext, APIResponse, TestInfo } from "@playwright/test";
-import { PostMethodOptions } from "../model/restapi-options";
+import { PutMethodOptions } from "../model/restapi-options";
 
 export async function performPutOperation(
   request: APIRequestContext,
   testInfo: TestInfo,
-  putOptions: PostMethodOptions
+  putOptions: PutMethodOptions
 ) {
   if (putOptions?.data && putOptions?.form && putOptions?.multipart) {
     throw new Error(
