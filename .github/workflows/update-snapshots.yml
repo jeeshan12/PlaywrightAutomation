@@ -80,6 +80,7 @@ jobs:
 #           sha: ${{ steps.comment-branch.outputs.head_sha }}
 #           token: ${{ secrets.GITHUB_TOKEN }}
 #           status: ${{ job.status }}
+
       - name: commit the snapshots 
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
