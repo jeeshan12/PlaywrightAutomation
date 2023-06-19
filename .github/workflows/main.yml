@@ -64,6 +64,6 @@ jobs:
     - uses: actions/upload-artifact@v3
       if: job.status.visual.status == failure() || job.status.api.status == success()
       with:
-          name: playwright-report-api
+          name: playwright-report-visual
           path: playwright-report/
           retention-days: 20
