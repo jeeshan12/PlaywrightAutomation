@@ -42,7 +42,7 @@ jobs:
       with:
         name: playwright-report-web
         path: playwright-report/
-        retention-days: 30
+        retention-days: 20
       
     - name: Run Playwright API tests
       run: npx playwright test --project api
@@ -54,4 +54,16 @@ jobs:
       with:
         name: playwright-report-api
         path: playwright-report/
-        retention-days: 30
+        retention-days: 20
+        
+    - name: Run Playwright Visual tests
+      run: npx playwright test --project chromium --grep=/visual/ --reporter=list
+      if: always()
+      id: visual
+        
+    - uses: actions/upload-artifact@v3
+      if: job.status.visual.status == failure() || job.status.api.status == success()
+      with:
+          name: playwright-report-api
+          path: playwright-report/
+          retention-days: 20
