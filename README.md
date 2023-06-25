@@ -14,7 +14,7 @@
 
 # Table of contents
 - [Installing Dependencies](#installing-dependencies)
-- [Utilities](#Utilities)
+- [Utilities](#utilities)
 - [POM](#pom)
 - [Fixtures](#fixtures)
 - [Specs](#specs)
@@ -22,6 +22,7 @@
 - [Docker](#docker)
 - [Reporting](#reporting)
 - [CI](#ci)
+- [Update Snapshots](#update-snapshots)
 
 # Installing Dependencies
 
@@ -369,3 +370,31 @@ Once the execution is done you can open the playwright report by running the com
  [(Back to top)](#table-of-contents)
  
 Tests runs on Github actions for every commit to the `main` branch and whenever a `PR` is created.
+
+# Update Snapshots
+ [(Back to top)](#table-of-contents)
+ 
+ In order to update the snapshots locally from docker conatiner, first you need to build the docker image by running the shell command
+```
+sh playwright-image-version.sh
+```
+This will create a docker image with name `jeeshan/playwright-automation`. If you want, you can change the image name in shell script `playwright-image-version.sh`.
+Once image is built you can update the snapshots from the docker conatiner by running the command
+```
+docker run  --rm --ipc=host -v $PWD:/app jeeshan/playwright-automation npx playwright test --grep visual --project chromium --update-snapshots
+```
+After the above command is executed, you can see the snapshot in your local repository under `tests/web/__screenshots__/linux` folder.
+
+For debugging purpose, you can run the container in interactive mode. For this  you can use `-it` flag  and override the command with `/bin/sh`
+```
+docker run -it --rm --ipc=host -v $PWD:/app jeeshan/playwright-automation /bin/sh
+
+```
+Above command will open up the terminal in your running conatiner. Now you can run any command to perform the operations inside the conatiner.
+
+#### Running the visual tests inside the docker the conatiner
+
+You can run the visual tests in docker container by running below command
+```
+docker run  --rm --ipc=host -v $PWD:/app jeeshan/playwright-automation npx playwright test --grep visual --project chromium
+```
