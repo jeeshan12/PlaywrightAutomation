@@ -84,7 +84,7 @@ export interface ReportOptions {
 `performGetOperation(apiRequestContext: APIRequestContext, testInfo: TestInfo, getOptions: GetMethodOptions)`
 
 
-
+##### Params Description
 + **apiRequestContext:** This API is used for the Web API testing. This is passed as a fixture to this method call.
 + **testInfo:** It provides information about currently running test. This is used to attach additional details to the report.
 + **getOptions:** This is an interface `GetMethodOptions` which provides strutcure to our Rest API call.
@@ -109,7 +109,7 @@ export interface GetMethodOptions extends ReportOptions {
 `performPostOperation(apiRequestContext: APIRequestContext, testInfo: TestInfo, postOptions: PostMethodOptions)`
 
 
-
+##### Params Description
 + **apiRequestContext:** This API is used for the Web API testing. This is passed as a fixture to this method call.
 + **testInfo:** It provides information about currently running test. This is used to attach additional details to the report.
 + **postOptions:** This is an interface `PostMethodOptions` which provides strutcure to our Rest API call.
@@ -163,7 +163,7 @@ export interface PostMethodOptions extends ReportOptions {
 
 `performPutOperation(apiRequestContext: APIRequestContext, testInfo: TestInfo, putOptions: PutMethodOptions)`
 
-
+##### Params Description
 
 + **apiRequestContext:** This API is used for the Web API testing. This is passed as a fixture to this method call.
 + **testInfo:** It provides information about currently running test. This is used to attach additional details to the report.
@@ -219,7 +219,7 @@ export interface PutMethodOptions extends ReportOptions {
 
 `performDeleteOperation(apiRequestContext: APIRequestContext, testInfo: TestInfo, deleteOptions: DeleteMethodOptions)`
 
-
+##### Params Description
 
 + **apiRequestContext:** This API is used for the Web API testing. This is passed as a fixture to this method call.
 + **testInfo:** It provides information about currently running test. This is used to attach additional details to the report.
@@ -334,7 +334,7 @@ If you want to chnage the image name, you can change this in shell script
   docker  build -t  <<imageName>>  -f Dockerfile  --build-arg PW_VERSION="v$VERSION" .
   ```
     
-<<imageTag>> is the name of the image. Generally your dockerusername followed by the name of the image. It's not mandate but a good practice to name your image like this. 
+`<<imageName>>` is the name of the image. Generally your dockerusername followed by the name of the image. It's not mandate but a good practice to name your image like this. 
 
     
 2. Once image is build you can now execute the tests in container by running the below command
