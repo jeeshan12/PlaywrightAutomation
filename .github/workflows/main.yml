@@ -47,39 +47,29 @@ jobs:
         if: steps.playwright-cache.outputs.cache-hit != 'true'
 
       - run: npx playwright install-deps
+        name: Installing playwright dependencies
         if: steps.playwright-cache.outputs.cache-hit != 'true'
 
       - name: Run Playwright tests
         run: npx playwright test --project chromium --grep-invert=/visual/
-        id: web
-
-      - uses: actions/upload-artifact@v3
-        if: job.status.web.status == failure() || job.status.web.status == success()
-        with:
-          name: playwright-report-web
-          path: playwright-report/
-          retention-days: 20
 
       - name: Run Playwright API tests
         run: npx playwright test --project api
         if: always()
-        id: api
-
-      - uses: actions/upload-artifact@v3
-        if: job.status.api.status == failure() || job.status.api.status == success()
-        with:
-          name: playwright-report-api
-          path: test-results/
-          retention-days: 20
 
       - name: Run Playwright Visual tests
         run: npx playwright test --project chromium --grep=/visual/ --reporter=list
         if: always()
-        id: visual
 
+      - name: Merge reports
+        if: always()
+        shell: bash
+        id: merge-reports
+        run: |
+          npm run merge-report
       - uses: actions/upload-artifact@v3
-        if: job.status.visual.status == failure() || job.status.api.status == success()
+        if: job.status.merge-reports.status == success()
         with:
-          name: playwright-report-visual
-          path: test-results/
+          name: playwright-report
+          path: merged-report/
           retention-days: 20
