@@ -68,7 +68,6 @@ jobs:
         run: |
           npm run merge-reports
       - uses: actions/upload-artifact@v3
-        if: job.status.merge-reports.status == success()
         with:
           name: playwright-report
           path: merged-report/
