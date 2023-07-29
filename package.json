@@ -3,7 +3,9 @@
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
-	"scripts": {},
+	"scripts": {
+		"merge-reports": "node ./utils/merge-reports.js"
+	},
 	"keywords": [
 		"visual-playwright",
 		"graphql",
