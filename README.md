@@ -352,7 +352,7 @@ If you want to chnage the image name, you can change this in shell script
  + For Visual
  
    ```
-   Implementation is under progress
+   docker run  --rm --ipc=host -v $PWD:/app jeeshan/playwright-automation npx playwright test --grep visual --project chromium --update-snapshots
     ```
  
  **Above commands will automatically removes the container after execution.**
