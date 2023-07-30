@@ -66,7 +66,7 @@ npm ci
 
 ### Custom utility for GraphQL
 
-`performGraphQLOperation(apiRequestContext: APIRequestContext, graphQLOptions: GraphQLOptions, testInfo: TestInfo)`
+**`performGraphQLOperation(apiRequestContext: APIRequestContext, graphQLOptions: GraphQLOptions, testInfo: TestInfo)`**
 
 ##### Params Description
 
@@ -95,38 +95,27 @@ headers?: { [key: string]: string };
 ```
 
 `ReportOptions` is common interface to all API calls.
-
 ```
-
 export interface ReportOptions {
-
 attachRequestToReports?: boolean;
-
 attachResponseToReports?: boolean;
-
 }
-
 ```
 
-###
+
 
 | options | description | required |
-
+| :---: | :-: | :-: |
 | query | graphqlQuery | Y |
-
 | queryVariables | graphqlVariables | N **(optional)** |
-
 | url | endpoint | Y |
-
 | headers | headers to pass for request| N `(set to "Content-Type": "application/json" Accept: "application/json"by default)` **(optional)** |
-
 | attachRequestToReports | Attach request to the reports | N|
-
 | attachResponseToReports | Attach response to the reports | N |
 
 ### Custom utility for Rest API
 
-`performGetOperation(apiRequestContext: APIRequestContext, testInfo: TestInfo, getOptions: GetMethodOptions)`
+**`performGetOperation(apiRequestContext: APIRequestContext, testInfo: TestInfo, getOptions: GetMethodOptions)`**
 
 ##### Params Description
 
@@ -139,28 +128,20 @@ attachResponseToReports?: boolean;
 ##### getOptions: `GetMethodOptions`
 
 ```
-
 export interface GetMethodOptions extends ReportOptions {
-
 url: string;
-
 headers?: { [key: string]: string };
-
 params?: { [key: string]: string | number | boolean };
-
 }
-
 ```
 
 | options | description | required |
-
+| :---: | :-: | :-: |
 | url | endpoint | Y |
-
 | headers | headers to pass for request| N `(set to "Content-Type": "application/json" Accept: "application/json"by default)` **(optional)** |
-
 | params | query params | N **(optional)** |
 
-`performPostOperation(apiRequestContext: APIRequestContext, testInfo: TestInfo, postOptions: PostMethodOptions)`
+**`performPostOperation(apiRequestContext: APIRequestContext, testInfo: TestInfo, postOptions: PostMethodOptions)`**
 
 ##### Params Description
 
@@ -173,28 +154,17 @@ params?: { [key: string]: string | number | boolean };
 ##### postOptions: `PostMethodOptions`
 
 ```
-
 export interface PostMethodOptions extends ReportOptions {
 
 url: string;
 
-
-
 headers?: { [key: string]: string };
-
-
 
 params?: { [key: string]: string | number | boolean };
 
-
-
 data?: string | Buffer | Serializable;
 
-
-
 form?: { [key: string]: string | number | boolean };
-
-
 
 multipart?: {
 
@@ -211,29 +181,19 @@ multipart?: {
 | {
 
 /**
-
 * File name
-
 */
 
 name: string;
 
-
-
 /**
-
 * File type
-
 */
 
 mimeType: string;
 
-
-
 /**
-
 * File content
-
 */
 
 buffer: Buffer;
@@ -247,20 +207,15 @@ buffer: Buffer;
 ```
 
 | options | description | required |
-
+| :---: | :-: | :-: |
 | url | endpoint | Y |
-
 | headers | headers to pass for request| N `(set to "Content-Type": "application/json" Accept: "application/json"by default)` **(optional)** |
-
 | params | query params | N **(optional)** |
-
 | data | request body | Y (either one of three is required **data**, **form** **or** **multipart**)|
-
 | form | request form data | Y (either one of three is required **data**, **form** **or** **multipart**)|
-
 | multipart | request file upload data | Y (either one of three is required **data**, **form** **or** **multipart**)|
 
-`performPutOperation(apiRequestContext: APIRequestContext, testInfo: TestInfo, putOptions: PutMethodOptions)`
+**`performPutOperation(apiRequestContext: APIRequestContext, testInfo: TestInfo, putOptions: PutMethodOptions)`**
 
 ##### Params Description
 
@@ -278,23 +233,13 @@ export interface PutMethodOptions extends ReportOptions {
 
 url: string;
 
-
-
 headers?: { [key: string]: string };
-
-
 
 params?: { [key: string]: string | number | boolean };
 
-
-
 data?: string | Buffer | Serializable;
 
-
-
 form?: { [key: string]: string | number | boolean };
-
-
 
 multipart?: {
 
@@ -311,33 +256,22 @@ multipart?: {
 | {
 
 /**
-
 * File name
-
 */
 
 name: string;
 
-
-
 /**
-
 * File type
-
 */
 
 mimeType: string;
 
-
-
 /**
-
 * File content
-
 */
 
 buffer: Buffer;
-
 };
 
 };
@@ -347,20 +281,15 @@ buffer: Buffer;
 ```
 
 | options | description | required |
-
+| :---:   | :-: | :-: |
 | url | endpoint | Y |
-
 | headers | headers to pass for request| N `(set to "Content-Type": "application/json" Accept: "application/json"by default)` **(optional)** |
-
 | params | query params | N **(optional)** |
-
 | data | request body | Y (either one of three is required **data**, **form** **or** **multipart**)|
-
 | form | request form data | Y (either one of three is required **data**, **form** **or** **multipart**)|
-
 | multipart | request file upload data | Y (either one of three is required **data**, **form** **or** **multipart**)|
 
-`performDeleteOperation(apiRequestContext: APIRequestContext, testInfo: TestInfo, deleteOptions: DeleteMethodOptions)`
+**`performDeleteOperation(apiRequestContext: APIRequestContext, testInfo: TestInfo, deleteOptions: DeleteMethodOptions)`**
 
 ##### Params Description
 
@@ -378,19 +307,11 @@ export interface DeleteMethodOptions extends ReportOptions {
 
 url: string;
 
-
-
 data?: string | Buffer | Serializable;
-
-
 
 form?: { [key: string]: string | number | boolean };
 
-
-
 headers?: { [key: string]: string };
-
-
 
 multipart?: {
 
@@ -416,28 +337,19 @@ buffer: Buffer;
 
 };
 
-
-
 params?: { [key: string]: string | number | boolean };
 
 }
 
-
-
 ```
 
 | options | description | required |
-
+| :---: | :-: | :-: |
 | url | endpoint | Y |
-
 | headers | headers to pass for request| N `(set to "Content-Type": "application/json" Accept: "application/json"by default)` **(optional)** |
-
 | params | query params | N **(optional)** |
-
 | data | request body | N **(optional)**|
-
 | form | request form data | N **(optional)** |
-
 | multipart | request file upload data | N **(optional)**|
 
 # POM
