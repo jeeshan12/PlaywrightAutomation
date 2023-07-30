@@ -112,8 +112,6 @@ attachResponseToReports?: boolean;
 
 | options | description | required |
 
-| :---: | :-: | :-: |
-
 | query | graphqlQuery | Y |
 
 | queryVariables | graphqlVariables | N **(optional)** |
@@ -155,8 +153,6 @@ params?: { [key: string]: string | number | boolean };
 ```
 
 | options | description | required |
-
-| :---: | :-: | :-: |
 
 | url | endpoint | Y |
 
@@ -251,8 +247,6 @@ buffer: Buffer;
 ```
 
 | options | description | required |
-
-| :---: | :-: | :-: |
 
 | url | endpoint | Y |
 
@@ -354,8 +348,6 @@ buffer: Buffer;
 
 | options | description | required |
 
-| :---: | :-: | :-: |
-
 | url | endpoint | Y |
 
 | headers | headers to pass for request| N `(set to "Content-Type": "application/json" Accept: "application/json"by default)` **(optional)** |
@@ -435,8 +427,6 @@ params?: { [key: string]: string | number | boolean };
 ```
 
 | options | description | required |
-
-| :---: | :-: | :-: |
 
 | url | endpoint | Y |
 
