@@ -1,0 +1,64 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.7.3/schema.json",
+	"organizeImports": {
+		"enabled": true
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"complexity": {
+				"noForEach": "warn",
+				"noExcessiveNestedTestSuites": "warn"
+			},
+			"correctness": {
+				"noConstAssign": "error",
+				"noConstructorReturn": "error",
+				"noSelfAssign": "warn",
+				"noUndeclaredVariables": "error",
+				"noUnreachable": "warn",
+				"noUnusedImports": "error",
+				"noUnusedVariables": "error",
+				"noVoidTypeReturn": "warn"
+			}
+		}
+	},
+	"formatter": {
+		"enabled": true,
+		"indentStyle": "space",
+		"indentWidth": 2,
+		"lineEnding": "crlf",
+		"formatWithErrors": true,
+		"attributePosition": "auto"
+	},
+	"json": {
+		"formatter": {
+			"trailingCommas": "none",
+			"enabled": true,
+			"lineEnding": "crlf"
+		}
+	},
+	"javascript": {
+		"formatter": {
+			"arrowParentheses": "always",
+			"bracketSameLine": false,
+			"bracketSpacing": true,
+			"jsxQuoteStyle": "double",
+			"quoteProperties": "asNeeded",
+			"semicolons": "always",
+			"trailingComma": "all"
+		}
+	},
+	"files": {
+		"ignore": [
+			".github/**",
+			".auth",
+			".husky"
+		]
+	},
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"useIgnoreFile": true
+	}
+}
