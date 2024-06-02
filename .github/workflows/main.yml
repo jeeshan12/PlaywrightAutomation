@@ -51,14 +51,14 @@ jobs:
         if: steps.playwright-cache.outputs.cache-hit != 'true'
 
       - name: Run Playwright tests
-        run: npx playwright test --project chromium --grep-invert=/visual/
+        run: npx playwright test  --grep=@web
 
       - name: Run Playwright API tests
-        run: npx playwright test --project api
+        run: npx playwright test --grep @api
         if: always()
 
       - name: Run Playwright Visual tests
-        run: npx playwright test --project chromium --grep=/visual/ --reporter=list
+        run: npx playwright test --grep=@visual --reporter=list
         if: always()
 
       - name: Merge reports
