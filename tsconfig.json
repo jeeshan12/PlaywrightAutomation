@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "esModuleInterop": true,
+    "paths": {
+      "@utils/*": ["src/utils/*"],
+      "@fixtures/*": ["src/fixtures/*"],
+			"@model/*": ["src/model/*"],
+			"@pages/*": ["src/pages/*"],
+			"@pagecomponents/*": ["src/pagecomponents/*"],
+			"@queries/*": ["src/data/queries/*"],
+			"@data-factory/*": ["src/data/*"]
+    }
+  }
+}

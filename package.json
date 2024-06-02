@@ -16,6 +16,7 @@
 	"author": "Mohammad Jeeshan",
 	"license": "ISC",
 	"devDependencies": {
+		"@biomejs/biome": "1.7.3",
 		"@faker-js/faker": "~8.0.2",
 		"@playwright/test": "~1.44.0",
 		"monocart-reporter": "~1.7.4",

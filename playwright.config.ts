@@ -22,11 +22,14 @@ export default defineConfig({
 	workers: process.env.CI ? 1 : undefined,
 	/* Reporter to use. See https://playwright.dev/docs/test-reporters */
 	reporter: [
-		['list'],
-		['monocart-reporter', {
-			name: "My Test Report",
-			outputFile: `${outputDir}/index.html`
-		}]
+		["list"],
+		[
+			"monocart-reporter",
+			{
+				name: "My Test Report",
+				outputFile: `${outputDir}/index.html`,
+			},
+		],
 	],
 	/* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
 	snapshotPathTemplate:
@@ -40,20 +43,20 @@ export default defineConfig({
 	},
 
 	projects: [
-		{ name: "login", testMatch: "/setup/login.setup.ts" },
+		{ name: "login", testMatch: "login.setup.ts", testDir: "./src/setup/" },
 		{
 			name: "chromium",
 			use: {
 				...devices["Desktop Chrome"],
 				storageState: "./.auth/login.json",
 			},
-			testDir: "./tests/web/",
+			testDir: "./src/tests/web/",
 			dependencies: ["login"],
 		},
 
 		{
 			name: "api",
-			testDir: "./tests/api/",
+			testDir: "./src/tests/api/",
 		},
 	],
 });
