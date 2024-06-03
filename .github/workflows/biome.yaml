@@ -9,5 +9,5 @@ jobs:
     permissions:
       contents: read
       pull-requests: write
-    uses: jeeshan12/resusable_workflows/.github/workflows/biome-format.yaml@feat-biome-workflow
+    uses: jeeshan12/resusable_workflows/.github/workflows/biome-format.yaml@v2.8.0
     secrets: inherit
