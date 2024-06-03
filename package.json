@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"merge-reports": "node ./utils/merge-reports.js"
+		"merge-reports": "node ./src/utils/merge-reports.js"
 	},
 	"keywords": [
 		"visual-playwright",
