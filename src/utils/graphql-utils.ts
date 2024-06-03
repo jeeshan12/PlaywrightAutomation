@@ -3,7 +3,7 @@ import type {
   APIResponse,
   TestInfo,
 } from "@playwright/test";
-import type { GraphQLOptions } from "../model/graphql-options";
+import type { GraphQLOptions } from "@model/graphql-options";
 
 export async function performGraphQLOperation(
   apiRequestContext: APIRequestContext,

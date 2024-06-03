@@ -2,9 +2,9 @@ import type { Page, Locator } from "@playwright/test";
 
 export class CartPage {
   readonly continueShoppingButton: Locator =
-    this.page.getByTestId(`continue-shopping`);
-  readonly checkoutButton: Locator = this.page.getByTestId(`checkout`);
-  readonly carItems: Locator = this.page.locator(`.cart_item`);
+    this.page.getByTestId("continue-shopping");
+  readonly checkoutButton: Locator = this.page.getByTestId("checkout");
+  readonly carItems: Locator = this.page.locator(".cart_item");
   readonly cartQuantity = (index: number): Locator =>
     this.carItems.nth(index).locator(".cart_quantity");
   readonly cartItemName = (index: number): Locator =>

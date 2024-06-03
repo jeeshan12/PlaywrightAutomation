@@ -3,7 +3,7 @@ import type {
   APIResponse,
   TestInfo,
 } from "@playwright/test";
-import type { PutMethodOptions } from "../model/restapi-options";
+import type { PutMethodOptions } from "@model/restapi-options";
 
 export async function performPutOperation(
   request: APIRequestContext,

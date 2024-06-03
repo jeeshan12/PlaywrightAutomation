@@ -1,9 +1,9 @@
 import { test as base } from "@playwright/test";
-import { ProductPage } from "src/pages/product-page";
-import { OverviewPage } from "src/pages/overview-page";
-import { CustomerInformationPage } from "src/pages/customer-information-page";
-import { CartPage } from "src/pages/cart-page";
-import { CompletePage } from "src/pages/complete-page";
+import { ProductPage } from "@pages/product-page";
+import { OverviewPage } from "@pages/overview-page";
+import { CustomerInformationPage } from "@pages//customer-information-page";
+import { CartPage } from "@pages//cart-page";
+import { CompletePage } from "@pages//complete-page";
 
 type OrderFixture = {
   productPage: ProductPage;
