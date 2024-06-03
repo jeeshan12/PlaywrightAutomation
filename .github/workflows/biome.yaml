@@ -6,5 +6,8 @@ on:
     branches: [main, master]
 jobs:
   biome:
+    permissions:
+      contents: read
+      pull-requests: write
     uses: jeeshan12/resusable_workflows/.github/workflows/biome-format.yaml@feat-biome-workflow
     secrets: inherit
