@@ -18,7 +18,7 @@
 				"noUndeclaredVariables": "error",
 				"noUnreachable": "warn",
 				"noUnusedImports": "error",
-				"noUnusedVariables": "error",
+				"noUnusedVariables": "warn",
 				"noVoidTypeReturn": "warn"
 			}
 		}

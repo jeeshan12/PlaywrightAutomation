@@ -1,6 +1,7 @@
-const { merge } = require("monocart-reporter");
-const { readdirSync, readFileSync } = require("fs");
-const { resolve, join } = require("path");
+import { merge } from "monocart-reporter";
+import { readdirSync, readFileSync } from "node:fs";
+import { resolve, join, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
 
 const getDirectories = (directoryPath) =>
   readdirSync(directoryPath, { withFileTypes: true }).reduce((acc, dir) => {
@@ -25,10 +26,12 @@ const getReportDataList = (directoryPath) => {
 };
 
 (async () => {
-  const reportDataList = getReportDataList(resolve(__dirname, "../results"));
+  const __filename = fileURLToPath(import.meta.url);
+  const __dirname = dirname(__filename);
+  const reportDataList = getReportDataList(resolve(__dirname, "../../results"));
   await merge(reportDataList, {
     name: "Automation Execution Report",
-    outputFile: `merged-report/index.html`,
+    outputFile: "../../merged-report/index.html",
     attachmentPath: (currentPath, extras) => {},
     onEnd: async (reportData, capability) => {},
   });
