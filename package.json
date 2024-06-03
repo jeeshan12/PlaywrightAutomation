@@ -1,26 +1,27 @@
 {
-	"name": "playwright-typescript",
-	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
-	"scripts": {
-		"merge-reports": "node ./src/utils/merge-reports.js"
-	},
-	"keywords": [
-		"visual-playwright",
-		"graphql",
-		"rest api",
-		"docker",
-		"github actions"
-	],
-	"author": "Mohammad Jeeshan",
-	"license": "ISC",
-	"devDependencies": {
-		"@biomejs/biome": "1.7.3",
-		"@faker-js/faker": "~8.0.2",
-		"@playwright/test": "~1.44.0",
-		"monocart-reporter": "~1.7.4",
-		"zod": "~3.21.4"
-	},
-	"type": "module"
+  "name": "playwright-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "merge-reports": "node ./src/utils/merge-reports.js"
+  },
+  "keywords": [
+    "visual-playwright",
+    "graphql",
+    "rest api",
+    "docker",
+    "github actions"
+  ],
+  "author": "Mohammad Jeeshan",
+  "license": "ISC",
+  "devDependencies": {
+    "@biomejs/biome": "1.7.3",
+    "@faker-js/faker": "~8.0.2",
+    "@playwright/test": "~1.44.0",
+    "lefthook": "^1.6.14",
+    "monocart-reporter": "~1.7.4",
+    "zod": "~3.21.4"
+  },
+  "type": "module"
 }
