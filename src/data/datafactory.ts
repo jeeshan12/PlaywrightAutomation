@@ -2,6 +2,7 @@ import type { CustomerInformation } from "../model/information";
 import { faker } from "@faker-js/faker";
 import type { User } from "../model/requests";
 
+// biome-ignore lint/complexity/noStaticOnlyClass: <Need to have static methods for data factory>
 export class DataFactory {
   public static getCustomerInformation(): CustomerInformation {
     return {

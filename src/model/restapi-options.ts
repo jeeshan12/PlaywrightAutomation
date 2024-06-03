@@ -1,8 +1,10 @@
 import type { ReportOptions } from "./report-options";
-import type { ReadStream } from "fs";
+import type { ReadStream } from "node:fs";
 /**
  * Can be converted to JSON
  */
+
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 export type Serializable = any;
 
 export interface GetMethodOptions extends ReportOptions {

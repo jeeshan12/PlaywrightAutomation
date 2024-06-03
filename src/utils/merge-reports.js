@@ -32,7 +32,9 @@ const getReportDataList = (directoryPath) => {
   await merge(reportDataList, {
     name: "Automation Execution Report",
     outputFile: "../../merged-report/index.html",
+    // biome-ignore lint/correctness/noUnusedVariables: <explanation>
     attachmentPath: (currentPath, extras) => {},
+    // biome-ignore lint/correctness/noUnusedVariables: <explanation>
     onEnd: async (reportData, capability) => {},
   });
 })();

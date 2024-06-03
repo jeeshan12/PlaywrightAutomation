@@ -1,4 +1,4 @@
-import type { MediaType } from "../../model/query-types";
+import type { MediaType } from "@model/query-types";
 
 export const getSiteStatistics = (): string => {
   return `query getSiteStatistics{

@@ -1,5 +1,5 @@
 import { expect, type Page } from "@playwright/test";
-import type { SnapshotOptions } from "../model/snapshot-options";
+import type { SnapshotOptions } from "@model/snapshot-options";
 
 export async function compareSnapshots(
   page: Page,
