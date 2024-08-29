@@ -1,4 +1,5 @@
-import type { Page, Locator } from "@playwright/test";
+import type { Locator, Page } from "@playwright/test";
+import { step } from "@utils/step-decorator";
 import type { CustomerInformation } from "../model/information";
 
 export class CustomerInformationPage {
@@ -9,7 +10,7 @@ export class CustomerInformationPage {
   readonly continueButton: Locator = this.page.getByTestId("continue");
 
   constructor(protected page: Page) {}
-
+  @step("Add customer information")
   async enterInformation(customerInformation: CustomerInformation) {
     await this.firstName.fill(customerInformation.firstName);
     await this.lastName.fill(customerInformation.lastName);
