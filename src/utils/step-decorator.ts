@@ -1,8 +1,8 @@
 import test from "@playwright/test";
 
 export function step(stepName?: string) {
-  // biome-ignore lint/complexity/noBannedTypes: <explanation>
   return function decorator(
+    // biome-ignore lint/complexity/noBannedTypes: <explanation>
     target: Function,
     context: ClassMethodDecoratorContext,
   ) {
